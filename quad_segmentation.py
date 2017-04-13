@@ -12,7 +12,9 @@
 # github.com/bsdnoobz/opencv-code/blob/master/quad-segmentation.cpp
 
 import numpy as np
+#from memory_profiler import profile
 
+#@profile
 def computeIntersect(a, b):
     """
     a, b: HoughLinesP line [x1, y1, x2, y2]
@@ -29,6 +31,7 @@ def computeIntersect(a, b):
     else:
         return (-1, -1)
 
+#@profile
 def sortCorners(corners, center):
     """
     corners : list of points 
@@ -101,9 +104,10 @@ def sortCorners(corners, center):
         corners[2] = np.array(br)
         corners[3] = np.array(bl)
     except Exception as e:
-        print(center,'\n')
-        print(top,'\n')
-        print(bot,'\n')
+        # print(center,'\n')
+        # print(top,'\n')
+        # print(bot,'\n')
+        pass
 
     return corners
 
